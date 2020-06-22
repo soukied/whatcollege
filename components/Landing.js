@@ -1,7 +1,7 @@
 import * as React from "react";
 import {StyleSheet, Text, View, Image } from 'react-native';
 
-const IMAGE_SIZE = 200;
+const IMAGE_SIZE = 150;
 
 export default class Landing extends React.Component {
     constructor(props) {
