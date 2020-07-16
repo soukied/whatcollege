@@ -7,14 +7,14 @@ const IMAGE_SIZE = 150;
 export default class Login extends Component {
 
     componentDidMount() {
-        console.log("Bruhh tooo!")
+        
     }
     constructor(props) {
         super(props);
         this.state = {
             screen: (<View style={{flex:1,justifyContent:"center"}}>
                 <View style={styles.container}>
-                <Image style={styles.logo} source={require("../assets/logo.png")}/>
+                <Image style={styles.logo} source={require("../assets/logo_highres.png")}/>
                 <Text style={styles.title}>WhatCollege</Text>
                 <TextInput style={styles.input} placeholder={"Username"}/>
                 <TextInput secureTextEntry={true} style={styles.input} placeholder={"Password"} textContentType={"password"}/>
@@ -45,9 +45,10 @@ const styles = StyleSheet.create({
     },
     input: {
         backgroundColor:"white",
-        borderRadius: 10,
+        borderRadius: 20,
         margin: 10,
         paddingHorizontal: 40,
+        paddingLeft:20,
         paddingVertical: 5,
         shadowColor:"black",
         shadowOffset: {width:0, height:4},

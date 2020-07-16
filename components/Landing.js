@@ -10,7 +10,7 @@ export default class Landing extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                <Image style={styles.logo} source={require("../assets/logo.png")}/>
+                <Image style={styles.logo} source={require("../assets/logo_highres.png")}/>
                 <Text style={styles.title}>WhatCollege</Text>
             </View>
             );
