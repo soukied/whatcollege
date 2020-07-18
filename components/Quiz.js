@@ -1,21 +1,22 @@
 import React, {Component} from "react";
-import {View, Text, StyleSheet} from "react-native";
-
-import Home from "./Home";
+import {View, Text, StyleSheet, TouchableOpacity} from "react-native";
 
 export default class Quiz extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {screen:(
-            <View>
-                <Text>This is number {this.props.number}</Text>
-            </View>
-        )}
-    }
-    componentDidMount() {
-        setTimeout(()=>this.setState({screen:<Home/>}), 1000);
-    }
+
     render() {
-        return this.state.screen;
+        return (
+            <View>
+                <TouchableOpacity onPress={()=>{}}>
+                    <Text style={style.Header}>Hello</Text>  
+                </TouchableOpacity>
+            </View>
+        );
     }
 }
+
+let style = StyleSheet.create({
+    Header : {
+        color: "blue",
+        fontSize: 18
+    }
+});

@@ -1,36 +1,31 @@
 import React, {Component} from "react";
-import {StyleSheet, Text, View, Image, TextInput, Button} from 'react-native';
-import Home from "./Home";
+import {StyleSheet, Text, View, Image, TouchableHighlight} from 'react-native';
+import {Input, Button} from "react-native-elements";
 
 const IMAGE_SIZE = 150;
 
 export default class Login extends Component {
-
-    componentDidMount() {
-        
-    }
-    constructor(props) {
-        super(props);
-        this.state = {
-            screen: (<View style={{flex:1,justifyContent:"center"}}>
-                <View style={styles.container}>
-                <Image style={styles.logo} source={require("../assets/logo_highres.png")}/>
-                <Text style={styles.title}>WhatCollege</Text>
-                <TextInput style={styles.input} placeholder={"Username"}/>
-                <TextInput secureTextEntry={true} style={styles.input} placeholder={"Password"} textContentType={"password"}/>
-                <Button onPress={()=>{
-                    this.setState({screen:<Home/>});
-                }} style={{width:70}} title="Login"/>
-                <Text style={{marginLeft:-110,fontWeight:"bold",paddingTop: 10,color:"rgb(3, 0, 38)", textDecorationLine:"underline"}}>
-                    Daftar Baru
-                </Text>
-            </View>
-        </View>),
-
-        };
-    }
     render() {
-        return this.state.screen;
+        return (
+            <View style={{flex:1,justifyContent:"center"}}>
+                        <View style={styles.container}>
+                        <Image style={styles.logo} source={require("../assets/logo_highres.png")}/>
+                        <Text style={styles.title}>WhatCollege</Text>
+                        <View style={{
+                            width: 230
+                        }}>
+                            <Input inputContainerStyle={{borderBottomWidth:0}} inputStyle={styles.input} placeholder={"Username"}/>
+                            <Input inputContainerStyle={{borderBottomWidth:0}} secureTextEntry={true} inputStyle={styles.input} placeholder={"Password"} textContentType={"password"}/>
+                        </View>
+                        <Button onPress={()=>this.props.loginPressed()} style={{width:70}} title="Login"/>
+                        <TouchableHighlight onPress={()=>this.props.registerPressed()}>
+                            <Text style={{marginLeft:-90,fontWeight:"bold",paddingTop: 10,color:"rgb(0,0,90)", textDecorationLine:"underline"}}>
+                                Daftar Baru
+                            </Text>
+                        </TouchableHighlight>
+                    </View>
+                </View>
+        );
     }
 }
 const styles = StyleSheet.create({
@@ -44,18 +39,12 @@ const styles = StyleSheet.create({
         shadowOpacity:0.3
     },
     input: {
-        backgroundColor:"white",
-        borderRadius: 20,
-        margin: 10,
-        paddingHorizontal: 40,
-        paddingLeft:20,
-        paddingVertical: 5,
-        shadowColor:"black",
-        shadowOffset: {width:0, height:4},
-        elevation:8,
-        shadowRadius: 3,
-        shadowOpacity:0.3,
-        paddingLeft: 8
+      backgroundColor: "white",
+      borderBottomWidth: 0,
+      paddingLeft: 10,
+      color: "black",
+      borderRadius: 10,
+      fontSize: 14
     },
     container: {
       flex: 1,
@@ -69,6 +58,9 @@ const styles = StyleSheet.create({
     title: {
       fontSize: 24,
       color:"white",
-      fontWeight:"bold"
+      fontWeight:"bold",
+      marginTop: -15,
+      marginBottom: 15,
+      letterSpacing: 1
     }
     });

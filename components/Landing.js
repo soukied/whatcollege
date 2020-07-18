@@ -1,13 +1,18 @@
-import * as React from "react";
+import React, {Component} from "react";
 import {StyleSheet, Text, View, Image } from 'react-native';
 
 const IMAGE_SIZE = 150;
 
-export default class Landing extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
+export default class Landing extends Component {
+  componentDidMount() {
+    setTimeout(()=>{
+      if (typeof this.props.timeout == "function") {
+        this.props.timeout();
+      }
+    }, 2000);
+  }  
+  
+  render() {
         return (
             <View style={styles.container}>
                 <Image style={styles.logo} source={require("../assets/logo_highres.png")}/>

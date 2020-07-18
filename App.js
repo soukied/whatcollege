@@ -1,35 +1,21 @@
 import React, {useState, Component} from 'react';
-import { Platform , View ,StyleSheet} from 'react-native';
 import Landing from "./components/Landing";
+import Home from "./components/Home";
 import Login from "./components/Login";
+import Profile from "./components/Profile";
+import Quiz from "./components/Quiz";
+import Register from "./components/Register";
 
-
-const instructions = Platform.select({
-  ios: `Press Cmd+R to reload,\nCmd+D or shake for dev menu`,
-  android: `Double tap R on your keyboard to reload,\nShake or press menu button for dev menu`,
-});
-
-
-const Navigate = {
-  Landing: <Landing/>,
-  Login: <Login/>
-}
-
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      screen: Navigate.Landing
-    }
-  }
-  componentDidMount() {
-    setTimeout(()=>{
-      this.setState({screen: Navigate.Login});
-    }, 2000)
-  }
-  render() {
-    return (
-    this.state.screen
-    );
-  }
+export default function App() {
+  
+  let LANDING = <Landing timeout={()=>setScreen(LOGIN)}/>;
+  let HOME = <Home quizPressed={()=>setScreen(QUIZ)} profilePressed={()=>setScreen(PROFILE)}/>;
+  let LOGIN = <Login loginPressed={()=>setScreen(HOME)} registerPressed={()=>setScreen(REGISTER)}/>;
+  let PROFILE = <Profile onTimeout={()=>setScreen(HOME)} timeout={5000}/>;
+  let REGISTER = <Register/>;
+  let QUIZ = <Quiz/>;
+  
+  let [screen, setScreen] = useState(LANDING);
+  
+  return (screen);
 }
