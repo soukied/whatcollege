@@ -41,7 +41,7 @@ function Header(props) {
                     <Icon style={{marginRight:10}} name="search"/>
                 </TouchableOpacity>
             </View>
-            <TouchableOpacity onPress={()=>props.profilePressed()}>
+            <TouchableOpacity onPress={()=>{props.profilePressed()}}>
                 <Icon name="account-circle" style={{marginRight:10}}/>
             </TouchableOpacity>
         </View>
