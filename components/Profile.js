@@ -1,5 +1,8 @@
 import React, {Component} from "react";
 import {View, Text, StyleSheet} from "react-native";
+import Header from "./Header";
+import {Icon} from 'react-native-elements';
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 export default class Profile extends Component {
     componentDidMount() {
@@ -8,9 +11,21 @@ export default class Profile extends Component {
     }
     render() {
         return(
-            <View>
-                <Text>Ini Profile</Text>
+            <View style={style.container}>
+                <Header color="rgb(197, 208, 250)" inner={
+                    <TouchableOpacity style={{flexDirection:"row", alignItems:"center"}} onPress={()=>this.props.backPressed()}>
+                        <Icon name="chevron-left"/>
+                        <Text>Kembali</Text>
+                    </TouchableOpacity>
+                }/>
             </View>
         );
     }
 }
+
+const style = StyleSheet.create({
+    container: {
+        flex:1,
+        marginTop:25
+    }
+});

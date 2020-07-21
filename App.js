@@ -11,9 +11,9 @@ export default function App() {
   let LANDING = <Landing timeout={()=>setScreen(LOGIN)}/>;
   let HOME = <Home quizPressed={()=>setScreen(QUIZ)} profilePressed={()=>setScreen(PROFILE)}/>;
   let LOGIN = <Login loginPressed={()=>setScreen(HOME)} registerPressed={()=>setScreen(REGISTER)}/>;
-  let PROFILE = <Profile onTimeout={()=>setScreen(HOME)} timeout={5000}/>;
+  let PROFILE = <Profile backPressed={()=>setScreen(HOME)}/>;
   let REGISTER = <Register/>;
-  let QUIZ = <Quiz/>;
+  let QUIZ = <Quiz backPressed={()=>setScreen(HOME)}/>;
   
   let [screen, setScreen] = useState(LANDING);
   
