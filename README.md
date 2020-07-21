@@ -1,1 +1,1 @@
-# whatcollege
+# WhatCollege
