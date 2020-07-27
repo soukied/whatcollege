@@ -36,8 +36,8 @@ function Header(props) {
     return (
         <View style={style.header}>
             <View style={{flexDirection:"row", justifyContent:"flex-start"}}>
-                <TextInput style={{marginLeft: 5,backgroundColor:"white", width:130, borderRadius:50, paddingLeft: 10, marginRight:7}} placeholder="Cari"/>
-                <TouchableOpacity onPress={()=>{}}>
+                <TextInput style={{marginLeft: 5,backgroundColor:"white", width:190, borderRadius:50, marginRight:7, paddingHorizontal: 10}} value={value} onChangeText={(val)=>setValue(val)} placeholder="Cari"/>
+                <TouchableOpacity onPress={()=>console.log(`Input value is: ${value}`)}>
                     <Icon style={{marginRight:10}} name="search"/>
                 </TouchableOpacity>
             </View>

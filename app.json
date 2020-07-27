@@ -3,6 +3,7 @@
   "displayName": "WhatCollege",
   "expo": {
     "name": "WhatCollege",
+    "icon":"./assets/logo_highres.png",
     "slug": "WhatCollege",
     "version": "1.0.0",
     "platforms": [
@@ -14,7 +15,8 @@
       "**/*"
     ],
     "android": {
-      "package": "com.soukied.WhatCollege"
+      "package": "com.soukied.WhatCollege",
+      "versionCode": 1
     }
   }
 }

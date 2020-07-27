@@ -1,0 +1,26 @@
+[
+    {
+        "pertanyaan":"Pertanyaan pertama?", 
+        "opsi":[
+            "Iya",
+            "Tidak", 
+            "Mungkin Saja"
+        ]
+    },
+    {
+        "pertanyaan":"Pertanyaan kedua?",
+        "opsi":[
+            "Hmm",
+            "Hmmmm",
+            "Hmmmmmm"
+        ]
+    },
+    {
+        "pertanyaan":"Pertanyaan ketiga?",
+        "opsi":[
+            "Apa ya?",
+            "Ngak tau",
+            "Terserah lah"
+        ]
+    }
+]
